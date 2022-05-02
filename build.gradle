@@ -1,0 +1,131 @@
+buildscript {
+    ext.kotlin_version = '1.5.10'
+    ext.retrofitVersion = '2.9.0'
+
+    repositories {
+        maven { url "https://repo1.maven.org/maven2" }
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+/*
+* Added to support generating gradle tasks to publish the library to Maven central.
+*/
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'signing'
+    id 'io.github.gradle-nexus.publish-plugin' version '1.1.0'
+}
+
+/*
+* This block was moved from the top of the original build.gradle.mustache file to here. The plugins block can
+* only have a buildscript block before it in this file.
+*/
+wrapper {
+    gradleVersion = '6.8.3'
+    distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
+}
+
+apply plugin: 'kotlin'
+
+/*
+* group and version were moved from the top of the original build.gradle.mustache file to here. The plugins block can
+* only have a buildscript block before it in this file.
+*/
+group 'app.cybrid'
+version '0.3.10'
+
+repositories {
+    maven { url "https://repo1.maven.org/maven2" }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1"
+    implementation "com.google.code.gson:gson:2.8.7"
+    implementation "org.apache.oltu.oauth2:org.apache.oltu.oauth2.client:1.0.2"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.1"
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-scalars:$retrofitVersion"
+    testImplementation "io.kotlintest:kotlintest-runner-junit5:3.4.2"
+}
+
+/*
+* Everything from here and below was added to support generating gradle tasks to publish the library to Maven central.
+*/
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'cybrid-api-id-kotlin'
+            from components.java
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+            pom {
+                name = 'Cybrid Kotlin SDK'
+                description = 'Auto-generated Cybrid SDK for Kotlin'
+                url = 'https://cybrid.xyz'
+                licenses {
+                    license {
+                        name = 'Apache-2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'brent-cybrid'
+                        name = 'Brent Carrara'
+                        email = 'brent@cybrid.app'
+                    }
+                }
+                scm {
+                    url = 'https://github.com/Cybrid-app/cybrid-api-id-kotlin/'
+                }
+            }
+        }
+    }
+}
+
+signing {
+    def signingPassword = findProperty("signingPassword")
+    def signingKey = null
+    if(findProperty("signingKey") != null) {
+        signingKey = new String(findProperty("signingKey").decodeBase64())
+    }
+
+    useInMemoryPgpKeys(signingKey, signingPassword)
+    sign publishing.publications.mavenJava
+}
+
+nexusPublishing {
+    repositories {
+        sonatype {
+            nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
+            snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
+        }
+    }
+}
+
+javadoc {
+    if(JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
+    }
+}
