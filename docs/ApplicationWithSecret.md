@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Enum: scopes
 Name | Value
 ---- | -----
-scopes | organizations:read, organizations:write, banks:read, banks:write, banks:execute, accounts:read, accounts:execute, customers:read, customers:write, customers:execute, prices:read, quotes:execute, quotes:read, trades:execute, trades:read
+scopes | organizations:read, organizations:write, banks:read, banks:write, banks:execute, customers:read, accounts:read, accounts:execute, customers:write, customers:execute, prices:read, quotes:execute, quotes:read, trades:execute, trades:read
 
 
 
