@@ -36,7 +36,7 @@ apply plugin: 'kotlin'
 * only have a buildscript block before it in this file.
 */
 group 'app.cybrid'
-version '0.17.0'
+version '0.17.1'
 
 repositories {
     maven { url "https://repo1.maven.org/maven2" }
@@ -51,7 +51,7 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1"
     implementation "com.google.code.gson:gson:2.9.0"
     implementation "org.apache.oltu.oauth2:org.apache.oltu.oauth2.client:1.0.2"
-    implementation "com.squareup.okhttp3:logging-interceptor:4.9.1"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.3"
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-scalars:$retrofitVersion"
