@@ -48,13 +48,9 @@ class ApiClient(
     private val defaultClientBuilder: OkHttpClient.Builder by lazy {
         OkHttpClient()
             .newBuilder()
-            .addInterceptor(HttpLoggingInterceptor(object : HttpLoggingInterceptor.Logger {
-                override fun log(message: String) {
-                    logger?.invoke(message)
-                }
-            }).apply {
-                level = HttpLoggingInterceptor.Level.BODY
-            })
+            .addInterceptor(HttpLoggingInterceptor { message -> logger?.invoke(message) }
+                .apply { level = HttpLoggingInterceptor.Level.BODY }
+            )
     }
 
     init {
@@ -72,7 +68,7 @@ class ApiClient(
                 "BearerAuth" -> HttpBearerAuth("bearer")"oauth2" -> OAuth(OAuthFlow.application, "", "https://id.demo.cybrid.app/oauth/token", "banks:write, banks:read, organizations:write, organizations:read")
                 else -> throw RuntimeException("auth name $authName not found in available auth names")
             }
-            addAuthorization(authName, auth);
+            addAuthorization(authName, auth)
         }
     }
 
@@ -169,7 +165,7 @@ class ApiClient(
                 ?.setClientId(clientId)
                 ?.setRedirectURI(redirectURI)
         }
-        return this;
+        return this
     }
 
     /**
@@ -181,7 +177,7 @@ class ApiClient(
         apiAuthorizations.values.runOnFirst<Interceptor, OAuth> {
             registerAccessTokenListener(accessTokenListener)
         }
-        return this;
+        return this
     }
 
     /**

@@ -16,7 +16,7 @@ interface BankApplicationsApi {
      * Responses:
      *  - 201: bank application created
      *
-     * @param postBankApplicationIdpModel  
+     * @param postBankApplicationIdpModel 
      * @return [ApplicationWithSecretIdpModel]
      */
     @POST("api/bank_applications")
@@ -34,6 +34,6 @@ interface BankApplicationsApi {
      * @return [ApplicationListIdpModel]
      */
     @GET("api/bank_applications")
-    suspend fun listBankApplications(@Query("page") page: kotlin.Int? = null, @Query("per_page") perPage: kotlin.Int? = null, @Query("bank_guid") bankGuid: kotlin.String? = null): Response<ApplicationListIdpModel>
+    suspend fun listBankApplications(@Query("page") page: kotlin.Int? = 0, @Query("per_page") perPage: kotlin.Int? = 10, @Query("bank_guid") bankGuid: kotlin.String? = null): Response<ApplicationListIdpModel>
 
 }

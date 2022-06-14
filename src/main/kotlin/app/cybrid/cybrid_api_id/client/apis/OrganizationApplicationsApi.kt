@@ -16,7 +16,7 @@ interface OrganizationApplicationsApi {
      * Responses:
      *  - 201: organization application created
      *
-     * @param postOrganizationApplicationIdpModel  
+     * @param postOrganizationApplicationIdpModel 
      * @return [ApplicationWithSecretIdpModel]
      */
     @POST("api/organization_applications")
@@ -33,6 +33,6 @@ interface OrganizationApplicationsApi {
      * @return [ApplicationListIdpModel]
      */
     @GET("api/organization_applications")
-    suspend fun listOrganizationApplications(@Query("page") page: kotlin.Int? = null, @Query("per_page") perPage: kotlin.Int? = null): Response<ApplicationListIdpModel>
+    suspend fun listOrganizationApplications(@Query("page") page: kotlin.Int? = 0, @Query("per_page") perPage: kotlin.Int? = 10): Response<ApplicationListIdpModel>
 
 }
