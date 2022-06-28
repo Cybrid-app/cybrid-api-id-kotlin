@@ -28,12 +28,12 @@ interface BankApplicationsApi {
      * Responses:
      *  - 200: list bank applications (per_page parameter set)
      *
-     * @param page The page index to retrieve. (optional, default to 0)
-     * @param perPage The number of entities per page to return. (optional, default to 10)
+     * @param page The page index to retrieve. (optional)
+     * @param perPage The number of entities per page to return. (optional)
      * @param bankGuid Bank guid to list applications for. (optional)
      * @return [ApplicationListIdpModel]
      */
     @GET("api/bank_applications")
-    suspend fun listBankApplications(@Query("page") page: java.math.BigDecimal? = 0, @Query("per_page") perPage: java.math.BigDecimal? = 10, @Query("bank_guid") bankGuid: kotlin.String? = null): Response<ApplicationListIdpModel>
+    suspend fun listBankApplications(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null, @Query("bank_guid") bankGuid: kotlin.String? = null): Response<ApplicationListIdpModel>
 
 }

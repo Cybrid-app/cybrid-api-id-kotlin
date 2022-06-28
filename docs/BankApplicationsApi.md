@@ -79,8 +79,8 @@ launch(Dispatchers.IO) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **java.math.BigDecimal**| The page index to retrieve. | [optional] [default to 0]
- **perPage** | **java.math.BigDecimal**| The number of entities per page to return. | [optional] [default to 10]
+ **page** | **java.math.BigDecimal**| The page index to retrieve. | [optional]
+ **perPage** | **java.math.BigDecimal**| The number of entities per page to return. | [optional]
  **bankGuid** | **kotlin.String**| Bank guid to list applications for. | [optional]
 
 ### Return type

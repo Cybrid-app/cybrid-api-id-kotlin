@@ -28,11 +28,11 @@ interface OrganizationApplicationsApi {
      * Responses:
      *  - 200: list organization applications (per_page parameter set)
      *
-     * @param page The page index to retrieve. (optional, default to 0)
-     * @param perPage The number of entities per page to return. (optional, default to 10)
+     * @param page The page index to retrieve. (optional)
+     * @param perPage The number of entities per page to return. (optional)
      * @return [ApplicationListIdpModel]
      */
     @GET("api/organization_applications")
-    suspend fun listOrganizationApplications(@Query("page") page: java.math.BigDecimal? = 0, @Query("per_page") perPage: java.math.BigDecimal? = 10): Response<ApplicationListIdpModel>
+    suspend fun listOrganizationApplications(@Query("page") page: java.math.BigDecimal? = null, @Query("per_page") perPage: java.math.BigDecimal? = null): Response<ApplicationListIdpModel>
 
 }
