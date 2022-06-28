@@ -66,8 +66,8 @@ Retrieve a list of bank OAuth2 applications.  Required scope: **banks:read**
 val apiClient = ApiClient()
 apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(BankApplicationsApi::class.java)
-val page : kotlin.Int = 56 // kotlin.Int | The page index to retrieve.
-val perPage : kotlin.Int = 56 // kotlin.Int | The number of entities per page to return.
+val page : java.math.BigDecimal = 56 // java.math.BigDecimal | The page index to retrieve.
+val perPage : java.math.BigDecimal = 56 // java.math.BigDecimal | The number of entities per page to return.
 val bankGuid : kotlin.String = bankGuid_example // kotlin.String | Bank guid to list applications for.
 
 launch(Dispatchers.IO) {
@@ -79,8 +79,8 @@ launch(Dispatchers.IO) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **kotlin.Int**| The page index to retrieve. | [optional] [default to 0]
- **perPage** | **kotlin.Int**| The number of entities per page to return. | [optional] [default to 10]
+ **page** | **java.math.BigDecimal**| The page index to retrieve. | [optional] [default to 0]
+ **perPage** | **java.math.BigDecimal**| The number of entities per page to return. | [optional] [default to 10]
  **bankGuid** | **kotlin.String**| Bank guid to list applications for. | [optional]
 
 ### Return type

@@ -33,6 +33,6 @@ interface OrganizationApplicationsApi {
      * @return [ApplicationListIdpModel]
      */
     @GET("api/organization_applications")
-    suspend fun listOrganizationApplications(@Query("page") page: kotlin.Int? = 0, @Query("per_page") perPage: kotlin.Int? = 10): Response<ApplicationListIdpModel>
+    suspend fun listOrganizationApplications(@Query("page") page: java.math.BigDecimal? = 0, @Query("per_page") perPage: java.math.BigDecimal? = 10): Response<ApplicationListIdpModel>
 
 }

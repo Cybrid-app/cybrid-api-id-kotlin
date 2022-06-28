@@ -66,8 +66,8 @@ Retrieve a list of organization OAuth2 applications.  Required scope: **organiza
 val apiClient = ApiClient()
 apiClient.setBearerToken("TOKEN")
 val webService = apiClient.createWebservice(OrganizationApplicationsApi::class.java)
-val page : kotlin.Int = 56 // kotlin.Int | The page index to retrieve.
-val perPage : kotlin.Int = 56 // kotlin.Int | The number of entities per page to return.
+val page : java.math.BigDecimal = 56 // java.math.BigDecimal | The page index to retrieve.
+val perPage : java.math.BigDecimal = 56 // java.math.BigDecimal | The number of entities per page to return.
 
 launch(Dispatchers.IO) {
     val result : ApplicationListIdpModel = webService.listOrganizationApplications(page, perPage)
@@ -78,8 +78,8 @@ launch(Dispatchers.IO) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **kotlin.Int**| The page index to retrieve. | [optional] [default to 0]
- **perPage** | **kotlin.Int**| The number of entities per page to return. | [optional] [default to 10]
+ **page** | **java.math.BigDecimal**| The page index to retrieve. | [optional] [default to 0]
+ **perPage** | **java.math.BigDecimal**| The number of entities per page to return. | [optional] [default to 10]
 
 ### Return type
 

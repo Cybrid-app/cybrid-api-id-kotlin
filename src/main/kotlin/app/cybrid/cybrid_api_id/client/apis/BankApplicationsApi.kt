@@ -34,6 +34,6 @@ interface BankApplicationsApi {
      * @return [ApplicationListIdpModel]
      */
     @GET("api/bank_applications")
-    suspend fun listBankApplications(@Query("page") page: kotlin.Int? = 0, @Query("per_page") perPage: kotlin.Int? = 10, @Query("bank_guid") bankGuid: kotlin.String? = null): Response<ApplicationListIdpModel>
+    suspend fun listBankApplications(@Query("page") page: java.math.BigDecimal? = 0, @Query("per_page") perPage: java.math.BigDecimal? = 10, @Query("bank_guid") bankGuid: kotlin.String? = null): Response<ApplicationListIdpModel>
 
 }
