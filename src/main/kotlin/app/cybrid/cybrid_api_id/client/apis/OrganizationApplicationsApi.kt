@@ -26,7 +26,7 @@ interface OrganizationApplicationsApi {
      * List organization applications
      * Retrieve a list of organization OAuth2 applications.  Required scope: **organizations:read**
      * Responses:
-     *  - 200: list organization applications (per_page parameter set)
+     *  - 200: list organization applications
      *
      * @param page The page index to retrieve. (optional)
      * @param perPage The number of entities per page to return. (optional)

@@ -26,7 +26,7 @@ interface BankApplicationsApi {
      * List bank applications
      * Retrieve a list of bank OAuth2 applications.  Required scope: **banks:read**
      * Responses:
-     *  - 200: list bank applications (per_page parameter set)
+     *  - 200: list bank applications
      *
      * @param page The page index to retrieve. (optional)
      * @param perPage The number of entities per page to return. (optional)
