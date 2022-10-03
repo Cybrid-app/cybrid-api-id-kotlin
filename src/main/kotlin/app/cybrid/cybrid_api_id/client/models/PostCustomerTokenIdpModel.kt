@@ -26,19 +26,36 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param name Name for the bank application.
- * @param bankGuid Bank guid the application is associated to.
+ * @param customerGuid Customer guid the access token is being generated for.
+ * @param scopes List of the scopes requested for the access token.
  */
 
-data class PostBankApplicationIdpModel (
+data class PostCustomerTokenIdpModel (
 
-    /* Name for the bank application. */
-    @SerializedName("name")
-    val name: kotlin.String,
+    /* Customer guid the access token is being generated for. */
+    @SerializedName("customer_guid")
+    val customerGuid: kotlin.String,
 
-    /* Bank guid the application is associated to. */
-    @SerializedName("bank_guid")
-    val bankGuid: kotlin.String? = null
+    /* List of the scopes requested for the access token. */
+    @SerializedName("scopes")
+    val scopes: kotlin.collections.List<PostCustomerTokenIdpModel.Scopes>
 
-)
+) {
+
+    /**
+     * List of the scopes requested for the access token.
+     *
+     * Values: customersColonRead,accountsColonRead,accountsColonExecute,pricesColonRead,quotesColonRead,quotesColonExecute,tradesColonRead,rewardsColonRead
+     */
+    enum class Scopes(val value: kotlin.String) {
+        @SerializedName(value = "customers:read") customersColonRead("customers:read"),
+        @SerializedName(value = "accounts:read") accountsColonRead("accounts:read"),
+        @SerializedName(value = "accounts:execute") accountsColonExecute("accounts:execute"),
+        @SerializedName(value = "prices:read") pricesColonRead("prices:read"),
+        @SerializedName(value = "quotes:read") quotesColonRead("quotes:read"),
+        @SerializedName(value = "quotes:execute") quotesColonExecute("quotes:execute"),
+        @SerializedName(value = "trades:read") tradesColonRead("trades:read"),
+        @SerializedName(value = "rewards:read") rewardsColonRead("rewards:read");
+    }
+}
 

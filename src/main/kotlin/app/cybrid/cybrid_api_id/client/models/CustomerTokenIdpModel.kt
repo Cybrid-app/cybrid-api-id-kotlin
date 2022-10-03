@@ -26,19 +26,14 @@ import com.google.gson.annotations.SerializedName
 /**
  * 
  *
- * @param name Name for the bank application.
- * @param bankGuid Bank guid the application is associated to.
+ * @param accessToken The JWT access token for the customer.
  */
 
-data class PostBankApplicationIdpModel (
+data class CustomerTokenIdpModel (
 
-    /* Name for the bank application. */
-    @SerializedName("name")
-    val name: kotlin.String,
-
-    /* Bank guid the application is associated to. */
-    @SerializedName("bank_guid")
-    val bankGuid: kotlin.String? = null
+    /* The JWT access token for the customer. */
+    @SerializedName("access_token")
+    val accessToken: kotlin.String? = null
 
 )
 

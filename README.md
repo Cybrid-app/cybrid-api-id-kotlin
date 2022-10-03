@@ -37,6 +37,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *BankApplicationsApi* | [**createBankApplication**](docs/BankApplicationsApi.md#createbankapplication) | **POST** api/bank_applications | Create bank application
 *BankApplicationsApi* | [**listBankApplications**](docs/BankApplicationsApi.md#listbankapplications) | **GET** api/bank_applications | List bank applications
+*CustomerTokensApi* | [**createCustomerToken**](docs/CustomerTokensApi.md#createcustomertoken) | **POST** api/customer_tokens | Create customer access token
 *OrganizationApplicationsApi* | [**createOrganizationApplication**](docs/OrganizationApplicationsApi.md#createorganizationapplication) | **POST** api/organization_applications | Create organization application
 *OrganizationApplicationsApi* | [**listOrganizationApplications**](docs/OrganizationApplicationsApi.md#listorganizationapplications) | **GET** api/organization_applications | List organization applications
 
@@ -48,7 +49,9 @@ Class | Method | HTTP request | Description
  - [app.cybrid.cybrid_api_id.client.models.ApplicationListIdpModel](docs/ApplicationListIdpModel.md)
  - [app.cybrid.cybrid_api_id.client.models.ApplicationWithSecretAllOfIdpModel](docs/ApplicationWithSecretAllOfIdpModel.md)
  - [app.cybrid.cybrid_api_id.client.models.ApplicationWithSecretIdpModel](docs/ApplicationWithSecretIdpModel.md)
+ - [app.cybrid.cybrid_api_id.client.models.CustomerTokenIdpModel](docs/CustomerTokenIdpModel.md)
  - [app.cybrid.cybrid_api_id.client.models.PostBankApplicationIdpModel](docs/PostBankApplicationIdpModel.md)
+ - [app.cybrid.cybrid_api_id.client.models.PostCustomerTokenIdpModel](docs/PostCustomerTokenIdpModel.md)
  - [app.cybrid.cybrid_api_id.client.models.PostOrganizationApplicationIdpModel](docs/PostOrganizationApplicationIdpModel.md)
 
 
