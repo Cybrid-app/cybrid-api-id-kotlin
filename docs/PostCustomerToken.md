@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Enum: scopes
 Name | Value
 ---- | -----
-scopes | customers:read, accounts:read, accounts:execute, prices:read, quotes:read, quotes:execute, trades:read, rewards:read
+scopes | customers:read, accounts:read, accounts:execute, prices:read, quotes:read, quotes:execute, trades:read, rewards:read, external_bank_accounts:read, external_bank_accounts:execute
 
 
 
