@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Enum: scopes
 Name | Value
 ---- | -----
-scopes | organizations:read, organizations:write, banks:read, banks:write, banks:execute, customers:read, accounts:read, quotes:read, trades:read, external_bank_accounts:read, accounts:execute, customers:write, customers:execute, prices:read, quotes:execute, trades:execute, rewards:execute, rewards:read, external_bank_accounts:execute
+scopes | organizations:read, organizations:write, banks:read, banks:write, banks:execute, customers:read, accounts:read, quotes:read, trades:read, external_bank_accounts:read, workflows:read, accounts:execute, customers:write, customers:execute, prices:read, quotes:execute, trades:execute, rewards:execute, rewards:read, external_bank_accounts:execute, workflows:execute
 
 
 
