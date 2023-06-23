@@ -202,8 +202,9 @@ Class | Method | HTTP request | Description
 - **Flow**: application
 - **Authorization URL**: 
 - **Scopes**: 
-  - banks:write: banks write
-  - banks:read: banks read
   - organizations:write: organizations write
   - organizations:read: organizations read
+  - banks:write: banks write
+  - banks:read: banks read
+  - customers:write: customers write
 
