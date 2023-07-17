@@ -207,4 +207,5 @@ Class | Method | HTTP request | Description
   - banks:write: banks write
   - banks:read: banks read
   - customers:write: customers write
+  - customers:read: customers read
 

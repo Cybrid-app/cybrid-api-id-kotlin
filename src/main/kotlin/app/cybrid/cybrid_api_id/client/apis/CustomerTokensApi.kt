@@ -11,7 +11,7 @@ import app.cybrid.cybrid_api_id.client.models.PostCustomerTokenIdpModel
 interface CustomerTokensApi {
     /**
      * Create customer access token
-     * Creates a customer JWT access token.  Required scope: **customers:write**
+     * Creates a customer JWT access token.  Required scopes: **customers:write** and **customers:read**
      * Responses:
      *  - 201: Customer token created
      *
