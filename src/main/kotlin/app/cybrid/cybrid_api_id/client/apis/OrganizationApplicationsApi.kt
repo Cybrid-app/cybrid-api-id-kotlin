@@ -12,7 +12,7 @@ import app.cybrid.cybrid_api_id.client.models.PostOrganizationApplicationIdpMode
 interface OrganizationApplicationsApi {
     /**
      * Create organization application
-     * Create an organization OAuth2 application.  Required scope: **organizations:write**
+     * Create an organization OAuth2 application.  Required scope: **organization_applications:execute**
      * Responses:
      *  - 201: organization application created
      *

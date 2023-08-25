@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 Create organization application
 
-Create an organization OAuth2 application.  Required scope: **organizations:write**
+Create an organization OAuth2 application.  Required scope: **organization_applications:execute**
 
 ### Example
 ```kotlin

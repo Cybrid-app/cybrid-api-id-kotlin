@@ -12,7 +12,7 @@ import app.cybrid.cybrid_api_id.client.models.PostBankApplicationIdpModel
 interface BankApplicationsApi {
     /**
      * Create bank application
-     * Creates a bank OAuth2 application.  Required scope: **banks:write**
+     * Creates a bank OAuth2 application.  Required scope: **bank_applications:execute**
      * Responses:
      *  - 201: bank application created
      *
