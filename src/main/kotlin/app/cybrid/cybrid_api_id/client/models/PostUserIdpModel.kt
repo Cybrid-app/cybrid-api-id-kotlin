@@ -20,36 +20,20 @@
 
 package app.cybrid.cybrid_api_id.client.models
 
-import app.cybrid.cybrid_api_id.client.models.ApplicationIdpModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
  * 
  *
- * @param total The total number of records available.
- * @param page The page index.
- * @param perPage The number of records per page returned.
- * @param objects Array of applications
+ * @param email The email address associated with the user.
  */
 
-data class ApplicationListIdpModel (
+data class PostUserIdpModel (
 
-    /* The total number of records available. */
-    @SerializedName("total")
-    val total: java.math.BigDecimal,
-
-    /* The page index. */
-    @SerializedName("page")
-    val page: java.math.BigDecimal,
-
-    /* The number of records per page returned. */
-    @SerializedName("per_page")
-    val perPage: java.math.BigDecimal,
-
-    /* Array of applications */
-    @SerializedName("objects")
-    val objects: kotlin.collections.List<ApplicationIdpModel>
+    /* The email address associated with the user. */
+    @SerializedName("email")
+    val email: kotlin.String
 
 )
 

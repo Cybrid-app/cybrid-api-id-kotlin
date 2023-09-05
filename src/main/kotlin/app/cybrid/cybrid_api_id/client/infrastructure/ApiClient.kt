@@ -65,7 +65,7 @@ class ApiClient(
     ) : this(baseUrl, okHttpClientBuilder, serializerBuilder) {
         authNames.forEach { authName ->
             val auth = when (authName) {
-                "BearerAuth" -> HttpBearerAuth("bearer")"oauth2" -> OAuth(OAuthFlow.application, "", "https://id.sandbox.cybrid.app/oauth/token", "organizations:write, organizations:read, organization_applications:execute, banks:write, banks:read, bank_applications:execute, customers:write, customers:read")
+                "BearerAuth" -> HttpBearerAuth("bearer")"oauth2" -> OAuth(OAuthFlow.application, "", "https://id.sandbox.cybrid.app/oauth/token", "organizations:write, organizations:read, organization_applications:execute, banks:write, banks:read, bank_applications:execute, users:execute, customers:write, customers:read")
                 else -> throw RuntimeException("auth name $authName not found in available auth names")
             }
             addAuthorization(authName, auth)
