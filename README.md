@@ -92,7 +92,6 @@ The following scopes are available on the platform and can be requested when gen
 | User                  |                                                            |                                               | users:execute (Organization)                     |
 | Price                 | prices:read (Bank, Customer)                               |                                               |                                                  |
 | Quote                 | quotes:read (Organization, Bank, Customer)                 |                                               | quotes:execute (Organization, Bank, Customer)    |
-| Reward                | rewards:read (Bank, Customer)                              |                                               | rewards:execute (Bank)                           |
 | Trade                 | trades:read (Organization, Bank, Customer)                 |                                               | trades:execute (Organization, Bank, Customer)    |
 | Transfer              | transfers:read (Organization, Bank, Customer)              |                                               | transfers:execute (Organization, Bank, Customer) |
 | Workflow              | workflows:read (Organization, Bank, Customer)              |                                               | workflows:execute (Bank, Customer)               |
@@ -118,7 +117,6 @@ The available APIs for the [Identity](https://id.sandbox.cybrid.app/api/schema/s
 | Bank         | IdentityVerification | /api/identity_verifications    | Create and list identity verifications, which are performed on customers for KYC                  |
 | Bank         | Price                | /api/prices                    | Get the current prices for assets on the platform                                                 |
 | Bank         | Quote                | /api/quotes                    | Create and list quotes, which are required to execute trades                                      |
-| Bank         | Reward               | /api/rewards                   | Create a new reward (automates quote/trade for simplicity)                                        |
 | Bank         | Symbol               | /api/symbols                   | Get a list of symbols supported for trade (ex: BTC-USD)                                           |
 | Bank         | Trade                | /api/trades                    | Create and list trades, which buy or sell cryptocurrency                                          |
 | Bank         | Transfer             | /api/transfers                 | Create, get and list transfers (e.g., funding, book)                                              |
