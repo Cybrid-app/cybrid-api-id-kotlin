@@ -70,7 +70,7 @@ curl -X POST https://id.sandbox.cybrid.app/oauth/token -d '{
     \"scope\": \"banks:read banks:write bank_applications:execute accounts:read accounts:execute customers:read customers:write customers:execute prices:read quotes:execute quotes:read trades:execute trades:read transfers:execute transfers:read rewards:execute rewards:read external_bank_accounts:read external_bank_accounts:write external_bank_accounts:execute external_wallets:read external_wallets:execute workflows:read workflows:execute deposit_addresses:read deposit_addresses:execute\"
   }' -H \"Content-Type: application/json\"
 
-# When using Organization credentials set `scope` to 'organizations:read organizations:write organization_applications:execute banks:read banks:write banks:execute bank_applications:execute users:execute customers:read accounts:read prices:read quotes:execute quotes:read trades:execute trades:read transfers:read transfers:execute external_bank_accounts:read external_wallets:read workflows:read deposit_addresses:read'
+# When using Organization credentials set `scope` to 'organizations:read organizations:write organization_applications:execute banks:read banks:write banks:execute bank_applications:execute users:read users:execute customers:read accounts:read prices:read quotes:execute quotes:read trades:execute trades:read transfers:read transfers:execute external_bank_accounts:read external_wallets:read workflows:read deposit_addresses:read'
 ```
 <font color=\"orange\">**⚠️ Note: The above curl will create a bearer token with full scope access. Delete scopes if you'd like to restrict access.**</font>
 
@@ -89,7 +89,7 @@ The following scopes are available on the platform and can be requested when gen
 | External Bank Account | external_bank_accounts:read (Organization, Bank, Customer) | external_bank_accounts:write (Bank, Customer) | external_bank_accounts:execute (Bank, Customer)  |
 | External Wallet       | external_wallet:read (Organization, Bank, Customer)        |                                               | external_wallet:execute (Bank, Customer)         |
 | Organization          | organizations:read (Organization)                          | organizations:write (Organization)            |                                                  |
-| User                  |                                                            |                                               | users:execute (Organization)                     |
+| User                  | users:read (Organization)                                  |                                               | users:execute (Organization)                     |
 | Price                 | prices:read (Bank, Customer)                               |                                               |                                                  |
 | Quote                 | quotes:read (Organization, Bank, Customer)                 |                                               | quotes:execute (Organization, Bank, Customer)    |
 | Trade                 | trades:read (Organization, Bank, Customer)                 |                                               | trades:execute (Organization, Bank, Customer)    |
@@ -105,7 +105,7 @@ The available APIs for the [Identity](https://id.sandbox.cybrid.app/api/schema/s
 | Identity     | Bank                 | /api/bank_applications         | Create and list banks                                                                             |
 | Identity     | CustomerToken        | /api/customer_tokens           | Create customer JWT access tokens                                                                 |
 | Identity     | Organization         | /api/organization_applications | Create and list organizations                                                                     |
-| Identity     | Organization         | /api/users                     | Create an organization user                                                                       |
+| Identity     | Organization         | /api/users                     | Create and list organization users                                                                |
 | Organization | Organization         | /api/organizations             | APIs to retrieve and update organization name                                                     |
 | Bank         | Account              | /api/accounts                  | Create and list accounts, which hold a specific asset for a customers                             |
 | Bank         | Asset                | /api/assets                    | Get a list of assets supported by the platform (ex: BTC, ETH)                                     |
@@ -185,7 +185,8 @@ Class | Method | HTTP request | Description
 *CustomerTokensApi* | [**createCustomerToken**](docs/CustomerTokensApi.md#createcustomertoken) | **POST** api/customer_tokens | Create customer access token
 *OrganizationApplicationsApi* | [**createOrganizationApplication**](docs/OrganizationApplicationsApi.md#createorganizationapplication) | **POST** api/organization_applications | Create organization application
 *OrganizationApplicationsApi* | [**listOrganizationApplications**](docs/OrganizationApplicationsApi.md#listorganizationapplications) | **GET** api/organization_applications | List organization applications
-*UserApi* | [**createUser**](docs/UserApi.md#createuser) | **POST** api/users | Create user
+*UsersApi* | [**createUser**](docs/UsersApi.md#createuser) | **POST** api/users | Create user
+*UsersApi* | [**listUser**](docs/UsersApi.md#listuser) | **GET** api/users | List users
 
 
 <a name="documentation-for-authorization"></a>
@@ -209,6 +210,7 @@ Class | Method | HTTP request | Description
   - banks:write: banks write
   - banks:read: banks read
   - bank_applications:execute: bank_applications execute
+  - users:read: users read
   - users:execute: users execute
   - customers:write: customers write
   - customers:read: customers read

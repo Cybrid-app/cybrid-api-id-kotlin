@@ -20,35 +20,36 @@
 
 package app.cybrid.cybrid_api_id.client.models
 
+import app.cybrid.cybrid_api_id.client.models.UserIdpModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
  * 
  *
- * @param guid Auto-generated unique identifier for the user.
- * @param username The user's username.
- * @param email The user's email address.
- * @param createdAt ISO8601 datetime the application was created at.
+ * @param total The total number of users available.
+ * @param page The page index.
+ * @param perPage The number of records per page returned.
+ * @param objects Array of applications
  */
 
-data class UserIdpModel (
+data class UserListIdpModel (
 
-    /* Auto-generated unique identifier for the user. */
-    @SerializedName("guid")
-    val guid: kotlin.String? = null,
+    /* The total number of users available. */
+    @SerializedName("total")
+    val total: java.math.BigDecimal,
 
-    /* The user's username. */
-    @SerializedName("username")
-    val username: kotlin.String? = null,
+    /* The page index. */
+    @SerializedName("page")
+    val page: java.math.BigDecimal,
 
-    /* The user's email address. */
-    @SerializedName("email")
-    val email: kotlin.String? = null,
+    /* The number of records per page returned. */
+    @SerializedName("per_page")
+    val perPage: java.math.BigDecimal,
 
-    /* ISO8601 datetime the application was created at. */
-    @SerializedName("created_at")
-    val createdAt: java.time.OffsetDateTime? = null
+    /* Array of applications */
+    @SerializedName("objects")
+    val objects: kotlin.collections.List<UserIdpModel>
 
 )
 
