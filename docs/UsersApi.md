@@ -5,6 +5,7 @@ All URIs are relative to *https://id.sandbox.cybrid.app*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createUser**](UsersApi.md#createUser) | **POST** api/users | Create user
+[**getUser**](UsersApi.md#getUser) | **GET** api/users/{user_guid} | Get User
 [**listUser**](UsersApi.md#listUser) | **GET** api/users | List users
 
 
@@ -49,6 +50,49 @@ Configure BearerAuth:
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+Get User
+
+Retrieves a user.  Required scope: **users:read**
+
+### Example
+```kotlin
+// Import classes:
+//import app.cybrid.cybrid_api_id.client.*
+//import app.cybrid.cybrid_api_id.client.infrastructure.*
+//import app.cybrid.cybrid_api_id.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(UsersApi::class.java)
+val userGuid : kotlin.String = userGuid_example // kotlin.String | Identifier for the user.
+
+launch(Dispatchers.IO) {
+    val result : UserIdpModel = webService.getUser(userGuid)
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userGuid** | **kotlin.String**| Identifier for the user. |
+
+### Return type
+
+[**UserIdpModel**](UserIdpModel.md)
+
+### Authorization
+
+
+Configure BearerAuth:
+    ApiClient().setBearerToken("TOKEN")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 

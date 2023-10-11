@@ -186,6 +186,7 @@ Class | Method | HTTP request | Description
 *OrganizationApplicationsApi* | [**createOrganizationApplication**](docs/OrganizationApplicationsApi.md#createorganizationapplication) | **POST** api/organization_applications | Create organization application
 *OrganizationApplicationsApi* | [**listOrganizationApplications**](docs/OrganizationApplicationsApi.md#listorganizationapplications) | **GET** api/organization_applications | List organization applications
 *UsersApi* | [**createUser**](docs/UsersApi.md#createuser) | **POST** api/users | Create user
+*UsersApi* | [**getUser**](docs/UsersApi.md#getuser) | **GET** api/users/{user_guid} | Get User
 *UsersApi* | [**listUser**](docs/UsersApi.md#listuser) | **GET** api/users | List users
 
 

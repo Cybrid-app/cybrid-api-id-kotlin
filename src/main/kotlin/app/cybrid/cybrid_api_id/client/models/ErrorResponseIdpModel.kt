@@ -20,36 +20,30 @@
 
 package app.cybrid.cybrid_api_id.client.models
 
-import app.cybrid.cybrid_api_id.client.models.UserIdpModel
 
 import com.google.gson.annotations.SerializedName
 
 /**
  * 
  *
- * @param total The total number of users available.
- * @param page The page index.
- * @param perPage The number of records per page returned.
- * @param objects Array of applications
+ * @param status Status code for Http Request
+ * @param errorMessage Error message
+ * @param messageCode Message code for Error
  */
 
-data class UserListIdpModel (
+data class ErrorResponseIdpModel (
 
-    /* The total number of users available. */
-    @SerializedName("total")
-    val total: java.math.BigDecimal,
+    /* Status code for Http Request */
+    @SerializedName("status")
+    val status: java.math.BigDecimal,
 
-    /* The page index. */
-    @SerializedName("page")
-    val page: java.math.BigDecimal,
+    /* Error message */
+    @SerializedName("error_message")
+    val errorMessage: kotlin.String,
 
-    /* The number of records per page returned. */
-    @SerializedName("per_page")
-    val perPage: java.math.BigDecimal,
-
-    /* Array of applications */
-    @SerializedName("objects")
-    val objects: kotlin.collections.List<UserIdpModel>
+    /* Message code for Error */
+    @SerializedName("message_code")
+    val messageCode: kotlin.String
 
 )
 
