@@ -24,6 +24,21 @@ interface UsersApi {
     suspend fun createUser(@Body postUserIdpModel: PostUserIdpModel): Response<UserIdpModel>
 
     /**
+     * Disable User
+     * Disables a user. User is not deleted.  Required scope: **users:execute**
+     * Responses:
+     *  - 204: User disabled
+     *  - 401: Unauthorized - Authentication failed, 
+     *  - 403: Invalid scope
+     *  - 404: user not found
+     *
+     * @param userGuid Identifier for the user.
+     * @return [Unit]
+     */
+    @DELETE("api/users/{user_guid}")
+    suspend fun disableUser(@Path("user_guid") userGuid: kotlin.String): Response<Unit>
+
+    /**
      * Get User
      * Retrieves a user.  Required scope: **users:read**
      * Responses:
