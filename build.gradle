@@ -36,7 +36,7 @@ apply plugin: 'kotlin'
 * only have a buildscript block before it in this file.
 */
 group 'app.cybrid'
-version '0.111.20'
+version '0.112.1'
 
 repositories {
     maven { url "https://repo1.maven.org/maven2" }
