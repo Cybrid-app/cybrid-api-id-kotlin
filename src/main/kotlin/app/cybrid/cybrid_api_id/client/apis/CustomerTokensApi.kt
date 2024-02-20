@@ -6,6 +6,7 @@ import retrofit2.Response
 import okhttp3.RequestBody
 
 import app.cybrid.cybrid_api_id.client.models.CustomerTokenIdpModel
+import app.cybrid.cybrid_api_id.client.models.ErrorResponseIdpModel
 import app.cybrid.cybrid_api_id.client.models.PostCustomerTokenIdpModel
 
 interface CustomerTokensApi {
@@ -14,6 +15,10 @@ interface CustomerTokensApi {
      * Creates a customer JWT access token.  Required scopes: **customers:write** and **customers:read**
      * Responses:
      *  - 201: Customer token created
+     *  - 401: Unauthorized
+     *  - 403: Forbidden
+     *  - 422: Unprocessable Entity
+     *  - 500: Internal Server Error
      *
      * @param postCustomerTokenIdpModel 
      * @return [CustomerTokenIdpModel]
