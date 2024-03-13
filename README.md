@@ -183,6 +183,7 @@ All URIs are relative to *https://id.sandbox.cybrid.app*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*ApplicationsApi* | [**discardApplication**](docs/ApplicationsApi.md#discardapplication) | **DELETE** api/applications/{client_id} | Discard Application
 *BankApplicationsApi* | [**createBankApplication**](docs/BankApplicationsApi.md#createbankapplication) | **POST** api/bank_applications | Create bank application
 *BankApplicationsApi* | [**listBankApplications**](docs/BankApplicationsApi.md#listbankapplications) | **GET** api/bank_applications | List bank applications
 *CustomerTokensApi* | [**createCustomerToken**](docs/CustomerTokensApi.md#createcustomertoken) | **POST** api/customer_tokens | Create customer access token
