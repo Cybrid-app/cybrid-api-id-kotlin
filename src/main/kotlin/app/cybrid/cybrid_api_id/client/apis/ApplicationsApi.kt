@@ -9,8 +9,23 @@ import app.cybrid.cybrid_api_id.client.models.ErrorResponseIdpModel
 
 interface ApplicationsApi {
     /**
-     * Discard Application
-     * Discards an application. Application is not deleted, all access tokens are revoked.Required scope: **organization_applications:execute**
+     * Delete Application
+     * Deletes an application.Required scope: **bank_applications:execute**
+     * Responses:
+     *  - 204: Application discarded
+     *  - 403: Invalid scope
+     *  - 404: application not found
+     *  - 401: Unauthorized - Authentication failed, 
+     *
+     * @param clientId Identifier for the application.
+     * @return [Unit]
+     */
+    @DELETE("api/bank_applications/{client_id}")
+    suspend fun deleteBankApplication(@Path("client_id") clientId: kotlin.String): Response<Unit>
+
+    /**
+     * Delete Application
+     * Deletes an application.Required scope: **organization_applications:execute**
      * Responses:
      *  - 204: Application disacarded
      *  - 401: Unauthorized - Authentication failed, 
@@ -20,7 +35,7 @@ interface ApplicationsApi {
      * @param clientId Identifier for the application.
      * @return [Unit]
      */
-    @DELETE("api/applications/{client_id}")
-    suspend fun discardApplication(@Path("client_id") clientId: kotlin.String): Response<Unit>
+    @DELETE("api/organization_applications/{client_id}")
+    suspend fun deleteOrganizationApplication(@Path("client_id") clientId: kotlin.String): Response<Unit>
 
 }
