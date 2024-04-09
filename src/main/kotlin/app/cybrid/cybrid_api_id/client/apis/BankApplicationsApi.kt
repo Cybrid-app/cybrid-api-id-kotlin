@@ -7,6 +7,7 @@ import okhttp3.RequestBody
 
 import app.cybrid.cybrid_api_id.client.models.ApplicationListIdpModel
 import app.cybrid.cybrid_api_id.client.models.ApplicationWithSecretIdpModel
+import app.cybrid.cybrid_api_id.client.models.ErrorResponseIdpModel
 import app.cybrid.cybrid_api_id.client.models.PostBankApplicationIdpModel
 
 interface BankApplicationsApi {
@@ -21,6 +22,21 @@ interface BankApplicationsApi {
      */
     @POST("api/bank_applications")
     suspend fun createBankApplication(@Body postBankApplicationIdpModel: PostBankApplicationIdpModel): Response<ApplicationWithSecretIdpModel>
+
+    /**
+     * Delete bank application
+     * Deletes an application.Required scope: **bank_applications:execute**
+     * Responses:
+     *  - 204: Application discarded
+     *  - 403: Invalid scope
+     *  - 404: application not found
+     *  - 401: Unauthorized - Authentication failed, 
+     *
+     * @param clientId Identifier for the application.
+     * @return [Unit]
+     */
+    @DELETE("api/bank_applications/{client_id}")
+    suspend fun deleteBankApplication(@Path("client_id") clientId: kotlin.String): Response<Unit>
 
     /**
      * List bank applications

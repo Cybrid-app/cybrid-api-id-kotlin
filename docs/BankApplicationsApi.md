@@ -5,6 +5,7 @@ All URIs are relative to *https://id.sandbox.cybrid.app*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createBankApplication**](BankApplicationsApi.md#createBankApplication) | **POST** api/bank_applications | Create bank application
+[**deleteBankApplication**](BankApplicationsApi.md#deleteBankApplication) | **DELETE** api/bank_applications/{client_id} | Delete bank application
 [**listBankApplications**](BankApplicationsApi.md#listBankApplications) | **GET** api/bank_applications | List bank applications
 
 
@@ -49,6 +50,49 @@ Configure BearerAuth:
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+Delete bank application
+
+Deletes an application.Required scope: **bank_applications:execute**
+
+### Example
+```kotlin
+// Import classes:
+//import app.cybrid.cybrid_api_id.client.*
+//import app.cybrid.cybrid_api_id.client.infrastructure.*
+//import app.cybrid.cybrid_api_id.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setBearerToken("TOKEN")
+val webService = apiClient.createWebservice(BankApplicationsApi::class.java)
+val clientId : kotlin.String = clientId_example // kotlin.String | Identifier for the application.
+
+launch(Dispatchers.IO) {
+    webService.deleteBankApplication(clientId)
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **clientId** | **kotlin.String**| Identifier for the application. |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+
+Configure BearerAuth:
+    ApiClient().setBearerToken("TOKEN")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 

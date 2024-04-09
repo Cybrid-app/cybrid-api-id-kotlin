@@ -183,12 +183,12 @@ All URIs are relative to *https://id.sandbox.cybrid.app*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ApplicationsApi* | [**deleteBankApplication**](docs/ApplicationsApi.md#deletebankapplication) | **DELETE** api/bank_applications/{client_id} | Delete Application
-*ApplicationsApi* | [**deleteOrganizationApplication**](docs/ApplicationsApi.md#deleteorganizationapplication) | **DELETE** api/organization_applications/{client_id} | Delete Application
 *BankApplicationsApi* | [**createBankApplication**](docs/BankApplicationsApi.md#createbankapplication) | **POST** api/bank_applications | Create bank application
+*BankApplicationsApi* | [**deleteBankApplication**](docs/BankApplicationsApi.md#deletebankapplication) | **DELETE** api/bank_applications/{client_id} | Delete bank application
 *BankApplicationsApi* | [**listBankApplications**](docs/BankApplicationsApi.md#listbankapplications) | **GET** api/bank_applications | List bank applications
 *CustomerTokensApi* | [**createCustomerToken**](docs/CustomerTokensApi.md#createcustomertoken) | **POST** api/customer_tokens | Create customer access token
 *OrganizationApplicationsApi* | [**createOrganizationApplication**](docs/OrganizationApplicationsApi.md#createorganizationapplication) | **POST** api/organization_applications | Create organization application
+*OrganizationApplicationsApi* | [**deleteOrganizationApplication**](docs/OrganizationApplicationsApi.md#deleteorganizationapplication) | **DELETE** api/organization_applications/{client_id} | Delete organization application
 *OrganizationApplicationsApi* | [**listOrganizationApplications**](docs/OrganizationApplicationsApi.md#listorganizationapplications) | **GET** api/organization_applications | List organization applications
 *UsersApi* | [**createUser**](docs/UsersApi.md#createuser) | **POST** api/users | Create user
 *UsersApi* | [**disableUser**](docs/UsersApi.md#disableuser) | **DELETE** api/users/{user_guid} | Disable User
