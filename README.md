@@ -223,4 +223,7 @@ Class | Method | HTTP request | Description
   - users:execute: users execute
   - customers:write: customers write
   - customers:read: customers read
+  - subscriptions:read: subscriptions read
+  - subscriptions:write: subscriptions write
+  - subscriptions:execute: subscriptions execute
 
